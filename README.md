@@ -1,6 +1,6 @@
 # TelePlus Team
 
-channel : <aherf="https://telegram.me/TelePlus_TG">@TelePlus_TG</a>
+channel : <a herf="https://telegram.me/TelePlus_TG">@TelePlus_TG</a>
 
 # Installation
 
@@ -16,7 +16,7 @@ chmod +x tg
 chmod +x launch.sh
 ```
 
-# Iaunch &Run
+# Iaunch & Run
 
 ```sh
 # Let's launch the bot.
