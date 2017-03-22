@@ -7,7 +7,7 @@
 # Let's install the bot.
 git clone https://github.com/shahradelahi/api-bot.git
 cd api-bot
-cd api-bot
+cd api
 chmod +x launch.sh
 cd ..
 cd bot
