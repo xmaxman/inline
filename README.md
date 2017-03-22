@@ -1,5 +1,6 @@
 # TelePlus Team
 
+channel : <aherf="https://telegram.me/TelePlus_TG">@TelePlus_TG</a>
 
 # Installation
 
