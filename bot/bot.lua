@@ -1,15 +1,15 @@
-bot = dofile('/home/root/data/utils.lua')
-json = dofile('/home/root/data/JSON.lua')
+bot = dofile('/home/username/data/utils.lua')
+json = dofile('/home/username/data/JSON.lua')
 URL = require "socket.url"
 serpent = require("serpent")
 http = require "socket.http"
 https = require "ssl.https"
 redis = require('redis')
 db = redis.connect('127.0.0.1', 6379)
-BASE = '/home/root/bot/'
-SUDO = 259760855 --sudo id
-sudo_users = {259760855,235888298,Userid}
-BOTS = 259760855 --bot id
+BASE = '/home/username/bot/'
+SUDO = 123456789 --sudo id
+sudo_users = {123456789,123456789,Userid}
+BOTS = 00000000 --bot id
 bot_id = db:get(SUDO..'bot_id')
 function vardump(value)
   print(serpent.block(value, {comment=false}))
@@ -687,7 +687,6 @@ end
         else
            bot.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)  
           end
-        end
         if text and text:match('^masterdem (%d+)') then
           local master = text:match('masterdem (%d+)')
          db:srem(SUDO..'masters:'..master)
@@ -876,7 +875,7 @@ end
             end
           tdcli_function({
       ID = "GetInlineQueryResults",
-      bot_user_id_ = 338908521,
+      bot_user_id_ = 123456789,
       chat_id_ = msg.chat_id_,
       user_location_ = {
         ID = "Location",
@@ -1236,7 +1235,6 @@ end
           end
         end
       end
-      end
    -- member
    if text == 'ping' then
           local a = {"<code>ربات فعال و آماده کار است.</code>","<code>ربات فعال است</code>","<b>pong!</b>"}
@@ -1271,6 +1269,7 @@ end
          local msgs = db:get(SUDO..'total:messages:'..msg.chat_id_..':'..msg.sender_user_id_)
          bot.sendMessage(msg.chat_id_, msg.id_, 1, '<code>شناسه:</code> [<b>'..msg.sender_user_id_..'</b>]\n<code>تعداد پیام ها:</code> [<b>'..msgs..'</b>]', 1, 'html')
       end
+end
 end
   
   
