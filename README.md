@@ -2,7 +2,7 @@
 
 channel : <a herf="https://telegram.me/TelePlus_TG">@TelePlus_TG</a>
 
-#پیش نیاز های ضروری
+# پیش نیاز های ضروری
 ```sh
 wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
  tar zxpf luarocks-2.2.2.tar.gz
@@ -18,13 +18,15 @@ wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
  sudo luarocks install Lua-cURL
 sudo luarocks install luaxmlrpc
 ```
-کد های زیر هم پیش نیازه حتما نصب کنید اکثرا ارور میده:
+# کد های زیر هم پیش نیازه حتما نصب کنید اکثرا ارور میده:
+
+```sh
 sudo apt-get install libstdc++6
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test 
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get dist-upgrade
-
+```
 
 # Installation
 
