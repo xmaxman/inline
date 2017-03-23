@@ -2,6 +2,8 @@
 
 channel : <a herf="https://telegram.me/TelePlus_TG">@TelePlus_TG</a>
 
+# ستاره بدین تا اپدیت جدید  بزارم
+
 # پیش نیاز های ضروری
 ```sh
 wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
@@ -19,6 +21,9 @@ wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
 sudo luarocks install luaxmlrpc
 ```
 # کد های زیر هم پیش نیازه حتما نصب کنید اکثرا ارور میده:
+
+* ** اگر فقط کلون کنید و به ما امتیاز ندید دیگه هیچ وقت اپدیت نمیدم**
+
 
 ```sh
 sudo apt-get install libstdc++6
