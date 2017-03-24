@@ -1,15 +1,15 @@
-bot = dofile('/username/data/utils.lua')
-json = dofile('/username/data/JSON.lua')
+bot = dofile('/username/api-bot/data/utils.lua')
+json = dofile('/username/api-bot/data/JSON.lua')
 URL = require "socket.url"
 serpent = require("serpent")
 http = require "socket.http"
 https = require "ssl.https"
 redis = require('redis')
 db = redis.connect('127.0.0.1', 6379)
-BASE = '/username/bot/'
+BASE = '/usename/api-bot/bot/'
 SUDO = 123456789 --sudo id
 sudo_users = {123456789,123456789,Userid}
-BOTS = 00000000 --bot id
+BOTS = 123456789 --bot id
 bot_id = db:get(SUDO..'bot_id')
 function vardump(value)
   print(serpent.block(value, {comment=false}))
