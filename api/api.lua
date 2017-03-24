@@ -1,15 +1,15 @@
 local URL = require "socket.url"
 local https = require "ssl.https"
 local serpent = require "serpent"
-local json = (loadfile "/username/data/JSON.lua")()
+local json = (loadfile "/usename/inline/data/JSON.lua")()
 local token = '' --token
 local url = 'https://api.telegram.org/bot' .. token
 local offset = 0
 local redis = require('redis')
 local redis = redis.connect('127.0.0.1', 6379)
-local SUDO = 259760855
+local SUDO = 123456789
 function is_mod(chat,user)
-sudo = {259760855}
+sudo = {123456789}
   local var = false
   for v,_user in pairs(sudo) do
     if _user == user then
@@ -159,7 +159,7 @@ local function run()
           offset = msg.update_id + 1
           if msg.inline_query then
             local q = msg.inline_query
-						if q.from.id == 235888298 or q.from.id == 259760855 then
+						if q.from.id == 123456789 or q.from.id == 123456789 then
             if q.query:match('%d+') then
               local chat = '-'..q.query:match('%d+')
 							local function is_lock(chat,value)
@@ -189,7 +189,7 @@ local hash = SUDO..'settings:'..chat..':'..value
 						local chat = ('-'..q.data:match('(%d+)') or '')
 						if is_mod(chat,q.from.id) then
              if q.data:match('_') and not (q.data:match('next_page') or q.data:match('left_page')) then
-                Canswer(q.id,">برای مشاهده راهنمای بیشتر این بخش عبارت\n/help\nرا ارسال کنید\n>تیم پشتیبانی:[@alireza_PT_BOT]\n>کانال پشتیبانی:[@Create_antispam_bot]\n>کانال فروش:[@Sale_Group]",true)
+                Canswer(q.id,">برای مشاهده راهنمای بیشتر این بخش عبارت\n/help\nرا ارسال کنید\n>تیم پشتیبانی:[@TelePlus_PvBot]\n>کانال پشتیبانی:[@TelePlus_TG]\n> فروش :[@TelePlus_GPs]",true)
 					elseif q.data:match('lock') then
 							local lock = q.data:match('lock (.*)')
 							TIME_MAX = (redis:get(SUDO..'floodtime'..chat) or 3)
@@ -326,7 +326,7 @@ local hash = SUDO..'settings:'..chat..':'..value
                    {text = 'بازگشت به منوی اصلی ◀️', callback_data = 'firstmenu:'..chat},{text = 'صفحه قبلی ◀️', callback_data = 'supportbot:'..chat}
 				}
 							}
-              edit(q.inline_message_id,'`به بخش ارتباط با بخش فنی خوش آمدید.`\n`در صورت وجود مشکل در ربات به ما پیغام ارسال کنید:`\n[ارسال پیغام](https://telegram.me/alireza_PT_BOT)',keyboard)
+              edit(q.inline_message_id,'`به بخش ارتباط با بخش فنی خوش آمدید.`\n`در صورت وجود مشکل در ربات به ما پیغام ارسال کنید:`\n[ارسال پیغام](https://telegram.me/TelePlus_PVBot)',keyboard)
             end
 							------------------------------------------------------------------------
 							if q.data:match('reportproblem') then
@@ -337,7 +337,7 @@ local hash = SUDO..'settings:'..chat..':'..value
                    {text = 'بازگشت به منوی اصلی ◀️', callback_data = 'firstmenu:'..chat},{text = 'صفحه قبلی ◀️', callback_data = 'supportbot:'..chat}
 				}
 							}
-              edit(q.inline_message_id,'`به بخش گزارش مشکل خوش آمدید.`\n`در صورت وجود مشکل در کارکرد سرویس شما به ما اطلاع دهید:`\n[گزارش مشکل](https://telegram.me/alireza_PT_BOT)',keyboard)
+              edit(q.inline_message_id,'`به بخش گزارش مشکل خوش آمدید.`\n`در صورت وجود مشکل در کارکرد سرویس شما به ما اطلاع دهید:`\n[گزارش مشکل](https://telegram.me/TelePlus_PvBot)',keyboard)
             end
 							------------------------------------------------------------------------
 							if q.data:match('fahedsale') then
@@ -387,7 +387,7 @@ local hash = SUDO..'settings:'..chat..':'..value
                    {text = 'بازگشت به منوی اصلی ◀️', callback_data = 'firstmenu:'..chat},{text = 'صفحه قبلی ◀️', callback_data = 'supportbot:'..chat}
 				}
 							}
-              edit(q.inline_message_id,'`به بخش انتقادات و پیشنهادات خوش آمدید.`\n`هرگونه انتقاد،پیشنهاد را با در میان بگذارید:`\n[ارسال انتقاد،پیشنهاد](https://telegram.me/alireza_PT_BOT)',keyboard)
+              edit(q.inline_message_id,'`به بخش انتقادات و پیشنهادات خوش آمدید.`\n`هرگونه انتقاد،پیشنهاد را با در میان بگذارید:`\n[ارسال انتقاد،پیشنهاد](https://telegram.me/TelePlus_PvBot)',keyboard)
             end
 							------------------------------------------------------------------------
 							if q.data:match('soalatmotadavel') then
@@ -446,7 +446,7 @@ local hash = SUDO..'settings:'..chat..':'..value
                    {text = 'بازگشت به منوی اصلی ◀️', callback_data = 'firstmenu:'..chat},{text = 'صفحه قبلی ◀️', callback_data = 'helpbot:'..chat}
 				}
 							}
-              edit(q.inline_message_id,'>[راهنمای مالکین گروه(اصلی-فرعی)](https://telegram.me/newtg)\n*[/#!]options* --دریافت تنظیمات گروه به صورت اینلاین\n*[/#!]setrules text* --تنظیم قوانین گروه\n*[/#!]modset* @username|reply|user-id --تنظیم مالک فرعی جدید برای گروه با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]moddem* @username|reply|user-id --حذف مالک فرعی از گروه با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]ownerlist* --دریافت لیست مدیران اصلی\n*[/#!]managers* --دریافت لیست مدیران فرعی گروه\n*[/#!]setlink link* {لینک-گروه} --تنظیم لینک گروه\n*[/#!]link* دریافت لینک گروه\n*[/#!]kick* @username|reply|user-id اخراج کاربر با ریپلی|یوزرنیم|شناسه\n*_______________________*\n>[راهنمای بخش حذف ها](https://telegram.me/newtg)\n*[/#!]delete managers* {حذف تمامی مدیران فرعی تنظیم شده برای گروه}\n*[/#!]delete welcome* {حذف پیغام خوش آمدگویی تنظیم شده برای گروه}\n*[/#!]delete bots* {حذف تمامی ربات های موجود در ابرگروه}\n*[/#!]delete silentlist* {حذف لیست سکوت کاربران}\n*[/#!]delete filterlist* {حذف لیست کلمات فیلتر شده در گروه}\n*_______________________*\n>[راهنمای بخش خوش آمدگویی](https://telegram.me/newtg)\n*[/#!]welcome enable* --(فعال کردن پیغام خوش آمدگویی در گروه)\n*[/#!]welcome disable* --(غیرفعال کردن پیغام خوش آمدگویی در گروه)\n*[/#!]setwelcome text* --(تنظیم پیغام خوش آمدگویی جدید در گروه)\n*_______________________*\n>[راهنمای بخش فیلترگروه](https://telegram.me/newtg)\n*[/#!]mutechat* --فعال کردن فیلتر تمامی گفتگو ها\n*[/#!]unmutechat* --غیرفعال کردن فیلتر تمامی گفتگو ها\n*[/#!]mutechat number(h|m|s)* --فیلتر تمامی گفتگو ها بر حسب زمان[ساعت|دقیقه|ثانیه]\n*_______________________*\n>[راهنمای دستورات حالت سکوت کاربران](https://telegram.me/newtg)\n*[/#!]silentuser* @username|reply|user-id --افزودن کاربر به لیست سکوت با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]unsilentuser* @username|reply|user-id --افزودن کاربر به لیست سکوت با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]silentlist* --دریافت لیست کاربران حالت سکوت\n*_______________________*\n>[راهنمای بخش فیلتر-کلمات](https://telegram.me/newtg)\n*[/#!]filter word --افزودن عبارت جدید به لیست کلمات فیلتر شده\n[/#!]unfilter word* --حذف عبارت جدید از لیست کلمات فیلتر شده\n*[/#!]filterlist* --دریافت لیست کلمات فیلتر شده\n*_______________________*\n>[راهنمای بخش تنظیم پیغام مکرر](https://telegram.me/newtg)\n*[/#!]floodmax number* --تنظیم حساسیت نسبت به ارسال پیام مکرر\n*[/#!]floodtime* --تنظیم حساسیت نسبت به ارسال پیام مکرر برحسب زمان',keyboard)
+              edit(q.inline_message_id,'>[راهنمای مالکین گروه(اصلی-فرعی)](https://telegram.me/TelePlus_TG)\n*[/#!]options* --دریافت تنظیمات گروه به صورت اینلاین\n*[/#!]setrules text* --تنظیم قوانین گروه\n*[/#!]modset* @username|reply|user-id --تنظیم مالک فرعی جدید برای گروه با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]moddem* @username|reply|user-id --حذف مالک فرعی از گروه با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]ownerlist* --دریافت لیست مدیران اصلی\n*[/#!]managers* --دریافت لیست مدیران فرعی گروه\n*[/#!]setlink link* {لینک-گروه} --تنظیم لینک گروه\n*[/#!]link* دریافت لینک گروه\n*[/#!]kick* @username|reply|user-id اخراج کاربر با ریپلی|یوزرنیم|شناسه\n*_______________________*\n>[راهنمای بخش حذف ها](https://telegram.me/TelePlus_TG)\n*[/#!]delete managers* {حذف تمامی مدیران فرعی تنظیم شده برای گروه}\n*[/#!]delete welcome* {حذف پیغام خوش آمدگویی تنظیم شده برای گروه}\n*[/#!]delete bots* {حذف تمامی ربات های موجود در ابرگروه}\n*[/#!]delete silentlist* {حذف لیست سکوت کاربران}\n*[/#!]delete filterlist* {حذف لیست کلمات فیلتر شده در گروه}\n*_______________________*\n>[راهنمای بخش خوش آمدگویی](https://telegram.me/TelePlus_TG)\n*[/#!]welcome enable* --(فعال کردن پیغام خوش آمدگویی در گروه)\n*[/#!]welcome disable* --(غیرفعال کردن پیغام خوش آمدگویی در گروه)\n*[/#!]setwelcome text* --(تنظیم پیغام خوش آمدگویی جدید در گروه)\n*_______________________*\n>[راهنمای بخش فیلترگروه](https://telegram.me/TelePlus_TG)\n*[/#!]mutechat* --فعال کردن فیلتر تمامی گفتگو ها\n*[/#!]unmutechat* --غیرفعال کردن فیلتر تمامی گفتگو ها\n*[/#!]mutechat number(h|m|s)* --فیلتر تمامی گفتگو ها بر حسب زمان[ساعت|دقیقه|ثانیه]\n*_______________________*\n>[راهنمای دستورات حالت سکوت کاربران](https://telegram.me/TelePlus_TG)\n*[/#!]silentuser* @username|reply|user-id --افزودن کاربر به لیست سکوت با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]unsilentuser* @username|reply|user-id --افزودن کاربر به لیست سکوت با یوزرنیم|ریپلی|شناسه -فرد\n*[/#!]silentlist* --دریافت لیست کاربران حالت سکوت\n*_______________________*\n>[راهنمای بخش فیلتر-کلمات](https://telegram.me/TelePlus_TG)\n*[/#!]filter word --افزودن عبارت جدید به لیست کلمات فیلتر شده\n[/#!]unfilter word* --حذف عبارت جدید از لیست کلمات فیلتر شده\n*[/#!]filterlist* --دریافت لیست کلمات فیلتر شده\n*_______________________*\n>[راهنمای بخش تنظیم پیغام مکرر](https://telegram.me/TelePlus_TG)\n*[/#!]floodmax number* --تنظیم حساسیت نسبت به ارسال پیام مکرر\n*[/#!]floodtime* --تنظیم حساسیت نسبت به ارسال پیام مکرر برحسب زمان',keyboard)
             end
 							------------------------------------------------------------------------
 							if q.data:match('videohelp') then
@@ -1286,7 +1286,7 @@ local function getsettings(value)
 							}
               edit(q.inline_message_id,'تنظیمات-ابرگروه:',keyboard)
             end
-            else Canswer(q.id,'شما مالک/مدیر گروه نیستید و امکان تغییر تنظیمات را ندارید!\n>برای خرید ربات به کانال زیر مراجعه فرمایید:\n@Sale_Group',true)
+            else Canswer(q.id,'شما مالک/مدیر گروه نیستید و امکان تغییر تنظیمات را ندارید!\n>برای خرید ربات به کانال زیر مراجعه فرمایید:\n@TelePlus_TG',true)
 						end
 						end
           if msg.message and msg.message.date > (os.time() - 5) and msg.message.text then
