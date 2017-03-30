@@ -11,17 +11,17 @@ channel : <a herf="https://telegram.me/TelePlus_TG">@TelePlus_TG</a>
 # پیش نیاز های ضروری
 ```sh
 wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
- tar zxpf luarocks-2.2.2.tar.gz
- cd luarocks-2.2.2
- ./configure; sudo make bootstrap
- sudo luarocks install luasocket
- sudo luarocks install luasec
- sudo luarocks install redis-lua
- sudo luarocks install lua-term
- sudo luarocks install serpent
- sudo luarocks install dkjson
- sudo luarocks install lanes
- sudo luarocks install Lua-cURL
+tar zxpf luarocks-2.2.2.tar.gz
+cd luarocks-2.2.2
+./configure; sudo make bootstrap
+sudo luarocks install luasocket
+sudo luarocks install luasec
+sudo luarocks install redis-lua
+sudo luarocks install lua-term
+sudo luarocks install serpent
+sudo luarocks install dkjson
+sudo luarocks install lanes
+sudo luarocks install Lua-cURL
 sudo luarocks install luaxmlrpc
 ```
 # کد های زیر هم پیش نیازه حتما نصب کنید اکثرا ارور میده:
@@ -47,6 +47,9 @@ cd bot
 chmod +x tg
 chmod +x launch.sh
 ```
+# تنظیم سورس
+
+*  بعد از کلون تنظیم کنین سورس رو بعد لانچ 
 
 # تنظیم سورس
 ********
